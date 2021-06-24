@@ -42,6 +42,13 @@ const storageEngine = multer.diskStorage({
     }
 
 })
+
+
+if(process.env.NODE_ENV==='production'){
+    app.use(express.static("client/shoppy/build"))
+}
+
+
 app.use(express.static(path.join(__dirname, 'public')))
 app.use('/public/uploads', express.static('./public/uploads'))
 app.use(multer({ storage: storageEngine }).any())
@@ -117,15 +124,6 @@ ORDER.belongsTo(USER,{
 })
 
 
-// CART.hasMany(ORDER,{
-//     onUpdate: 'cascade',
-//     onDelete:'cascade'
-// })
-
-// ORDER.belongsTo(CART,{
-//     onUpdate: 'cascade',
-//     onDelete:'cascade'
-// })
 
 
 const PORT = process.env.PORT || 5000;

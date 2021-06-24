@@ -1,5 +1,5 @@
 module.exports = {
-    secret: 'worldisfullofdevelopers'
+    secret: 'qpalskdjfhgtyrueibvnxjj4676'
   };
 
   module.exports = {
