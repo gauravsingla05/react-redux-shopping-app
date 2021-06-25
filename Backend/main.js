@@ -44,7 +44,7 @@ const storageEngine = multer.diskStorage({
 })
 
 
-if(process.env.NODE_ENV==='production'){
+if(process.env.NODE_ENV=="production"){
     app.use(express.static("client/build"))
 }
 
