@@ -9,13 +9,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node main.js",
-    "start:dev": "nodemon main.js",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "start:dev": "nodemon main.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "bcrypt": "^4.0.1",
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "compression": "^1.7.4",
     "connect-session-sequelize": "^6.0.0",
@@ -48,8 +47,7 @@
     "razorpay": "^2.0.6",
     "request": "^2.88.2",
     "sequelize": "^5.11.0",
-    "shortid": "^2.2.16",
-    "sqlite3": "^4.1.0"
+    "shortid": "^2.2.16"
   },
   "devDependencies": {},
   "description": ""
