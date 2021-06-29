@@ -171,9 +171,9 @@ exports.user_signin =async (req,res)=>{
                     .then(result =>
                         {
                             console.log('-->',token) 
-                            res.cookie("token",token,{expire:new Date(Date.now()+999999),httpOnly:false })
+                            res.cookie("token",token,{expire:new Date(Date.now()+999999)})
                             res.status(200).json(response)
-                        
+                            
                     }
                     )
                     .catch(err =>

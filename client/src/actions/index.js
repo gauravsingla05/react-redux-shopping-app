@@ -26,8 +26,10 @@ export const login_action = formValues => async dispatch => {
       console.log('GTTTTTING RESPONSE',response)
       
       if(response!=null || response!='undefined' || response!=''){
+        Cookies.set('token',response.data.token)
         dispatch({type:HIDE_LOADER})
         if(response.data.success && response.data.user_role==='admin'){
+          
           history.push('/admin')
         }
         else if(response.data.success && response.data.user_role==='customer'){

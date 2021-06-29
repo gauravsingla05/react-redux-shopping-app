@@ -6,12 +6,14 @@ const bodyparser = require('body-parser')
 const config = require('./config/config')
 const api = require('./api/routes/api_get_data')
 var cors = require('cors')
+
 const corsOptions = {
     //To allow requests from client
     origin: [
       "http://localhost:3000",
       "http://127.0.0.1",
       "http://104.142.122.231",
+  
     ],
     credentials: true,
     exposedHeaders: ["set-cookie"],

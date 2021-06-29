@@ -1,1 +1,1 @@
-export const BASE_URL = 'http://autobytesolutions.xyz/'
+export const BASE_URL = 'https://autobytesolutions.xyz/'
