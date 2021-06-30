@@ -6,3 +6,11 @@ Features:
 1. Completetly built by using react-redux class based components.
 2. Admin can add, edit, delete products.
 3. Razorpay is used for payments.
+
+DEMO link : http://autobytesolutions.xyz
+
+ADMIN DEMO CREDENTIALS
+
+Username - admin@demo.com
+Password - password
+
