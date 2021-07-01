@@ -5,9 +5,9 @@ const USER = require('../models/user')
 
 module.exports = (req, res, next) => {
     const { authorization } = req.headers;
-    console.log(authorization)
+   
     if (!authorization) {
-
+       
         return res.status(401).send({
             error: 'You must be logged in.'
         });
@@ -16,10 +16,10 @@ module.exports = (req, res, next) => {
 
     const token = authorization.replace('Bearer ', '');
 
-
+   
 
     if (!token) {
-
+       
         return res.status(401).send({
             error: 'You must be logged in.'
         });
@@ -27,6 +27,7 @@ module.exports = (req, res, next) => {
     }
 
     jwt.verify(token, secret.secret, async (err, payload) => {
+       
         if (err) {
             return res.status(401).send({ error: 'You must be logged in.' });
         }

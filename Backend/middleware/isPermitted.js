@@ -7,13 +7,20 @@ const secret = require('../config/secret')
 const isPermitted = (permission)=>{
     
     return (req,res,next)=>{
-        
-        console.log('cookies',req.cookies)
-   
-        const token = req.cookies.token
+        const { authorization } = req.headers;
+      
+        if (!authorization) {
+            console.log('No authorization Found')
+            return res.status(401).send({
+                error: 'You must be logged in.'
+            });
+    
+        }  
+    
+        const token = authorization.replace('Bearer', '');
+     
 
         if(!token){
-            console.log('No Token Found')
             return res.status(401).send({
                 error:'You must be logged in.'
             });

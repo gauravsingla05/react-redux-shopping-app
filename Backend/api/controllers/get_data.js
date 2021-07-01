@@ -301,7 +301,11 @@ exports.buy_product = (req,res)=>{
     var cartItems = req.body.cartItems
     var order_amount = req.body.order_amount
     var order_status = 'processing'
-    const token = req.cookies.token 
+
+
+    const { authorization } = req.headers;
+
+   const token = authorization.replace('Bearer', '');
 
 
     if(!token){
@@ -435,7 +439,11 @@ exports.verify_order = (req,res)=>{
 }
 
 exports.fetch_orders = (req,res)=>{
-    const token = req.cookies.token 
+ 
+    const { authorization } = req.headers;
+
+   const token = authorization.replace('Bearer', '');
+
 
 
     if(!token){
@@ -470,7 +478,11 @@ exports.add_product = (req,res)=>{
     const {product_category_id,product_name,product_quantity,product_price} = req.body
     var product_image_path = req.files
 
-    const token = req.cookies.token
+
+    const { authorization } = req.headers;
+
+   const token = authorization.replace('Bearer', '');
+
 
     if(!token){
         console.log('No Token Found')
@@ -627,7 +639,11 @@ exports.edit_product = (req,res)=>{
 exports.add_to_cart = (req,res)=>{
     var {product_id} = req.body
 
-    const token = req.cookies.token
+
+    const { authorization } = req.headers;
+
+   const token = authorization.replace('Bearer', '');
+
 
     if(!token){
         console.log('No Token Found')
@@ -663,7 +679,11 @@ exports.add_to_cart = (req,res)=>{
 }
 
 exports.get_cart = (req,res)=>{
-    const token = req.cookies.token
+
+    const { authorization } = req.headers;
+
+   const token = authorization.replace('Bearer', '');
+
 
     if(!token){
         console.log('No Token Found')
@@ -703,8 +723,12 @@ exports.get_cart = (req,res)=>{
 
 exports.remove_cart_item = (req,res)=>{
     var {product_id} = req.body
-    const token = req.cookies.token
-    console.log("!!!!!!!!!!!!!!!!!!!",product_id)
+
+    const { authorization } = req.headers;
+
+   const token = authorization.replace('Bearer', '');
+
+
     if(!token){
         console.log('No Token Found')
         return res.status(401).send({
