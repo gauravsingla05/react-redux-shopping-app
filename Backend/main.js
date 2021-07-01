@@ -127,7 +127,7 @@ ORDER.belongsTo(USER,{
 
 
 
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5000;
 sequelizedb.sync().then(result => {
     app.listen(PORT, () => {
         console.log('server is running on ' + PORT)
