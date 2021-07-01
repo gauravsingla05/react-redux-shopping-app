@@ -9,10 +9,17 @@ module.exports = {
 //   DB: 'shopy'
 // };
 
+// module.exports = {
+//   HOST: 'localhost',
+//   USER: 'autobyte_root',
+//   PASSWORD:'Mock@tests@061',
+//   DB: 'autobyte_shoppy'
+// };
+
 module.exports = {
   HOST: 'localhost',
-  USER: 'autobyte_root',
+  USER: 'root',
   PASSWORD:'Mock@tests@061',
-  DB: 'autobyte_shoppy'
+  DB: 'shoppy'
 };
 
