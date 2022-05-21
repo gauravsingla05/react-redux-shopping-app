@@ -7,14 +7,10 @@ const config = require('./config/config')
 const api = require('./api/routes/api_get_data')
 var cors = require('cors')
 
-const cors=require("cors");
-const corsOptions ={
-   origin:'*', 
-   credentials:true,            //access-control-allow-credentials:true
-   optionSuccessStatus:200,
-}
 
-app.use(cors(corsOptions))
+app.use(cors({ origin: true }));
+
+
 const path = require('path')
 const multer = require('multer')
 const cookieParser = require('cookie-parser');
