@@ -8,7 +8,8 @@ import { BASE_URL } from '../apis/config'
 
 class Cart extends Component {
 
-
+      city=''
+      pin_code=''
     constructor(props) {
         super(props);
       this.state = {cart_total:0}
@@ -16,7 +17,7 @@ class Cart extends Component {
       }
 
 
-     city=''
+ 
     componentDidMount() {
         if (!this.props.isSignedIn) {
             history.push('/login')
@@ -49,8 +50,15 @@ class Cart extends Component {
 
                     <div className='col-8'>
                         {this.props.cartItems.map(p => {
-                    
-                            this.city = JSON.parse(p.user.user_address).city
+                            console.log('88888',JSON.parse( p.user.user_address).pin_code)
+                            if(p.user.user_address){
+                                try {
+                                    this.pin_code = JSON.parse(p.user.user_address).pin_code
+                                    this.city = JSON.parse( p.user.user_address).city
+                                } catch (error) {
+                                    console.log(error)
+                                }
+                            }
                             return <div className="card w-80" key={p.cart_id}>
 
 
@@ -58,7 +66,7 @@ class Cart extends Component {
                                     <div className='col-6'>
                                         <div className="card-body">
                                             <h5 className="card-title">{p.product.product_name}</h5>
-                                            <p className="card-text">{'Will be delivered at ' + JSON.parse(p.user.user_address).city + ',' + JSON.parse(p.user.user_address).pin_code}</p>
+                                            <p className="card-text">{'Will be delivered at ' + this.city + ',' + this.pin_code}</p>
                                             <button id={p.productProductId} onClick={this.onRemoveItemClick}  className="btn  btn-danger " >Remove</button>
 
                                         </div>
