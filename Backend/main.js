@@ -10,13 +10,7 @@ var cors = require('cors')
 
 const corsOptions = {
     //To allow requests from client
-    origin: [
-      "http://localhost:3000",
-      "http://127.0.0.1",
-      "https://majestic-bombolone-f6c4f3.netlify.app/",
-    ],
-    credentials: true,
-    exposedHeaders: ["set-cookie"],
+   origin:"*"
   };
 app.use(cors(corsOptions))
 
