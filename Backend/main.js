@@ -10,7 +10,8 @@ var cors = require('cors')
 
 const corsOptions = {
     //To allow requests from client
-   origin:"*"
+   origin:"*",
+   credentials: true   
   };
 app.use(cors(corsOptions))
 
