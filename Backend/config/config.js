@@ -13,7 +13,7 @@ module.exports = {
 module.exports = {
   HOST: 'localhost',
   USER: 'root',
-  PASSWORD:'password',
-  DB: 'shoppy'
+  PASSWORD:'',
+  DB: 'shopy'
 };
 

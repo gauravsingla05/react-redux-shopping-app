@@ -11,7 +11,7 @@ var cors = require('cors')
 const corsOptions = {
     //To allow requests from client
    origin:["http://localhost:3000",
-   "https://shoplyk.live/"
+   "https://shoplyk.live"
 ],
    credentials: true   
   };
