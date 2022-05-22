@@ -8,8 +8,17 @@ const api = require('./api/routes/api_get_data')
 var cors = require('cors')
 
 
-app.use(cors({ origin: true }));
-
+const corsOptions = {
+    //To allow requests from client
+    origin: [
+      "http://localhost:3000",
+      "http://127.0.0.1",
+      "https://majestic-bombolone-f6c4f3.netlify.app/",
+    ],
+    credentials: true,
+    exposedHeaders: ["set-cookie"],
+  };
+app.use(cors(corsOptions))
 
 const path = require('path')
 const multer = require('multer')
