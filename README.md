@@ -7,12 +7,7 @@ Shoppy is a custom shopping webiste build by using MERN (Mysql, Express, React.j
 2. Admin can add, edit, delete products.
 3. Razorpay is used for payments.
 
-**DEMO link** : https://shoplyk.live/
 
-**ADMIN DEMO CREDENTIALS**
-
-**Username** - admin@demo.com
-**Password** - password
 
 **SCREENSHORTS**
 ![ss1](https://user-images.githubusercontent.com/29041173/124006973-82880080-d9f8-11eb-8878-8110d96aa32d.PNG)
